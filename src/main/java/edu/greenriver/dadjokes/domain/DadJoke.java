@@ -1,4 +1,4 @@
-package edu.greenriver.dadjokes;
+package edu.greenriver.dadjokes.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
