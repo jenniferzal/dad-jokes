@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 @Service
 public class DadJokeService
@@ -47,4 +48,12 @@ public class DadJokeService
         return repository.findById(id).orElseThrow();
     }
 
+    public DadJoke getRandomDadJoke()
+    {
+        Random rand = new Random();
+        List<DadJoke> jokes = repository.findAll();
+        int index = rand.nextInt(jokes.size());
+
+        return jokes.get(index);
+    }
 }

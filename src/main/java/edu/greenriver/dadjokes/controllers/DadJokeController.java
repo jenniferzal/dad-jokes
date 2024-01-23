@@ -22,6 +22,12 @@ public class DadJokeController
         return service.getAll();
     }
 
+    @GetMapping("jokes/random")
+    public DadJoke getRandom()
+    {
+        return service.getRandomDadJoke();
+    }
+
     @GetMapping("jokes/{id}")
     public DadJoke byId(@PathVariable int id)
     {
@@ -34,14 +40,14 @@ public class DadJokeController
         service.add(newDadJoke);
     }
 
-    @PutMapping("jokes/{id}")
+    @PutMapping("jokes/update/{id}")
     public DadJoke updateDadJoke(@PathVariable int id,
                                  @RequestBody DadJoke updatedDadJoke)
     {
         return service.update(id, updatedDadJoke);
     }
 
-    @DeleteMapping("jokes/{id}")
+    @DeleteMapping("jokes/delete/{id}")
     public void deleteDadJoke(@PathVariable int id)
     {
         service.delete(id);
