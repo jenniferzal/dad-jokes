@@ -31,12 +31,15 @@ public class DadJokeService
 
     public DadJoke update(int id, String newDadJokeText)
     {
-        return null;
+        DadJoke currentJoke = repository.findById(id).orElseThrow();
+        currentJoke.setJokeText(newDadJokeText);
+
+        return repository.save(currentJoke);
     }
 
     public void delete(int id)
     {
-
+        repository.deleteById(id);
     }
 
 }
