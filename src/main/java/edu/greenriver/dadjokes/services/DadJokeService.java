@@ -29,10 +29,10 @@ public class DadJokeService
         repository.save(joke);
     }
 
-    public DadJoke update(int id, String newDadJokeText)
+    public DadJoke update(int id, DadJoke newDadJokeText)
     {
         DadJoke currentJoke = repository.findById(id).orElseThrow();
-        currentJoke.setJokeText(newDadJokeText);
+        currentJoke.setJokeText(newDadJokeText.getJokeText());
 
         return repository.save(currentJoke);
     }

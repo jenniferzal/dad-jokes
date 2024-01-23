@@ -30,7 +30,7 @@ public class DadJokeController
 
     @PutMapping("jokes/{id}")
     public DadJoke updateDadJoke(@PathVariable int id,
-                                 @RequestBody String updatedDadJoke)
+                                 @RequestBody DadJoke updatedDadJoke)
     {
         return service.update(id, updatedDadJoke);
     }
