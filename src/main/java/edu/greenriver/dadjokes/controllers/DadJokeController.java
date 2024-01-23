@@ -22,6 +22,12 @@ public class DadJokeController
         return service.getAll();
     }
 
+    @GetMapping("jokes/{id}")
+    public DadJoke byId(@PathVariable int id)
+    {
+        return service.byId(id);
+    }
+
     @PostMapping("jokes")
     public void addJoke(@RequestBody DadJoke newDadJoke)
     {
@@ -40,4 +46,6 @@ public class DadJokeController
     {
         service.delete(id);
     }
+
+
 }
